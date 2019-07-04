@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -122,10 +123,15 @@ public class VkAuthController {
 //        model.addAttribute("lastName", lastName);
 //        return "registration";
 //        model.addAttribute("user", userService.findOne(Long.parseLong(userId)));
-        request.getSession().setAttribute("VK_ACCESS_TOKEN", accessToken);
+//        request.getSession().setAttribute("VK_ACCESS_TOKEN", accessToken);
 //        Principal principal = request.getUserPrincipal();
-//        model.addAttribute("username", principal.getName());
+        String name = "blank";
+        if(SecurityContextHolder.getContext().getAuthentication() != null) {
+            name = SecurityContextHolder.getContext().getAuthentication().getName();
+        }
+        model.addAttribute("username", name);
         return "index";
+//        return "redirect:/index";
 
 
 //        return "redirect:/registration?name=" + firstName + "&last_name" + lastName;

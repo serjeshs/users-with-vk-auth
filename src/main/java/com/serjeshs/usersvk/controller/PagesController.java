@@ -21,42 +21,35 @@ public class PagesController {
     private final Logger logger = LoggerFactory.getLogger("Pages Controller");
 
     @GetMapping("/login")
-//    @GetMapping(value = {"/", "/login"})
     public String loginPage(Model model) {
-//        model.addAttribute("appversion", ver);
         return "login";
     }
 
     @GetMapping(value = {"/", "/index.html", "/index"})
-//    @GetMapping(value = {"/index.html", "/index"})
     public String indexPage(Model model, HttpServletRequest request) {
         logger.info("IndexPage");
         Principal principal = request.getUserPrincipal();
-//        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-//        model.addAttribute("username", username);
         model.addAttribute("username", principal.getName());
         model.addAttribute("appversion", ver);
         return "index";
     }
 
-    @GetMapping("/registration")
-    public String registrationPage(
-            @RequestParam(value = "name",  required = false) String name,
-            @RequestParam(value = "last_name",  required = false) String lastName,
-            ModelMap model
-    ) {
-        logger.info("Registration");
-        model.addAttribute("name",name);
-        model.addAttribute("lastName",lastName);
-        return "registration";
-    }
+//    @GetMapping("/registration")
+//    public String registrationPage(
+//            @RequestParam(value = "name",  required = false) String name,
+//            @RequestParam(value = "last_name",  required = false) String lastName,
+//            ModelMap model
+//    ) {
+//        logger.info("Registration");
+//        model.addAttribute("name",name);
+//        model.addAttribute("lastName",lastName);
+//        return "registration";
+//    }
 
     @GetMapping("/users-controll")
     public String usersControllPage(Model model, HttpServletRequest request) {
         model.addAttribute("appversion", ver);
         Principal principal = request.getUserPrincipal();
-//        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-//        model.addAttribute("username", username);
         model.addAttribute("username", principal.getName());
         return "users-controll";
     }

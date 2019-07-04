@@ -11,7 +11,6 @@ import org.springframework.core.env.Environment;
 import javax.sql.DataSource;
 
 @Configuration
-//@ConfigurationProperties("application")
 public class PersistenceContext {
 
     @Autowired

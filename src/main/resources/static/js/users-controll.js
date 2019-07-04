@@ -8,6 +8,13 @@ $(document).ready(function () {
     //     event.preventDefault();
     //     delete_user();
     // });
+
+    // $('#buttonDelete').click(function () {
+    //     event.preventDefault();
+    //     delete_user();
+    //     table.row('.selected').remove().draw(false);
+    //     document.getElementById("buttonDelete").disabled = true;
+    // });
 });
 
 function adding_user() {
@@ -21,7 +28,8 @@ function adding_user() {
 
     $.ajax({
         type: "POST",
-        url: "/api/usersControll",
+        // url: "/api/usersControll",
+        url: "/api/users",
         data: JSON.stringify(addingFormData),
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
@@ -36,3 +44,29 @@ function adding_user() {
     })
 
 }
+
+// function delete_user() {
+//     var addingFormData = {
+//         description: description,
+//         name: name,
+//         password: password,
+//         role: role
+//     };
+//     $.ajax({
+//         // type: "POST",
+//         type: "DELETE",
+//         // url: "/api/usersControll2",
+//         url: "/api/users",
+//         data: JSON.stringify(addingFormData),
+//         dataType: 'json',
+//         contentType: "application/json; charset=utf-8",
+//         success: function (data) {
+//             // alert("Success of server's adding");
+//             $("#TableUsers").dataTable()._fnAjaxUpdate();
+//         }
+// //                 error: function (e) {
+// //                     alert("проблемы с сохранением");
+// //                 }
+//
+//     })
+// }
