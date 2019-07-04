@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <link type="text/css" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="css/index.css" rel="stylesheet">
+    <link type="text/css" href="css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="css/custom.css" rel="stylesheet">
+    <link type="text/css" href="css/tables.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="col-lg-2">
+                    <a class="navbar-brand" href="index.html">Система управления камерами</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+                                      <label th:text="${username}"></label>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbardrop">
+                                <a class="dropdown-item" th:href="@{/logout}">Выйти</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="container mt-3">
+            <div class="row">
+                <!--<div class="col-2">
+
+                </div>-->
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="body1">
+                            <h2>Управление пользователями</h2>
+                            <div class="table mt-4">
+                                <!--<table id="TableServers" class="table table-striped table-bordered" width="70%">-->
+                                <table id="TableUsers" class="table table-striped table-bordered" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <!--<th>id</th>-->
+                                        <th>Логин</th>
+                                        <th>Описание пользователя</th>
+                                        <!--<th>Пароль</th>-->
+                                        <th>Роль</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <button id="buttonCreate" class="btn btn-info">Добавить</button>
+                            <button id="buttonDelete" class="btn btn-warning" disabled>Удалить</button>
+                            <div id="modalBox" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" style="margin-left: 40px">Добавить пользователя</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="additing-form">
+                                                <div class="form-group">
+                                                    <label for="name">Логин</label>
+                                                    <input class="form-control" id="name" required type="text"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="description">Описание</label>
+                                                    <input class="form-control" id="description" required type="text"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password">Пароль</label>
+                                                    <input class="form-control" id="password" required type="text"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="role">Роль</label>
+                                                    <select class="form-control" id="role" required>
+                                                        <option value="ADMIN">ADMIN</option>
+                                                        <option value="USER">USER</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="submitForm" type="submit" class="btn btn-info">Сохранить</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="footer">
+    <div class="footer-bottom">
+        <div class="containerFooter">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="copyright">
+                        <label th:text="${appversion}"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script src="js/jquery-1.12.4.min.js"></script>-->
+<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
+<!--<script type="text/javascript" src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<script type="text/javascript" src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/users-controll.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#buttonCreate").click(function () {
+            $("#modalBox").modal('show');
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#TableUsers').DataTable({
+
+            "ajax": {
+                url: "/api/usersControll",
+                type: "GET",
+                dataSrc: ""
+            },
+            "columns": [
+//                {"data": "id"},
+                {"data": "name"},
+                {"data": "description"},
+//                {"data": "password"},
+                {"data": "role"}
+            ]
+        });
+    });
+    //           alert("datatables");
+</script>
+<script>
+    $(document).ready(function () {
+        var table = $('#TableUsers').DataTable();
+        var description , name, password, role;
+
+        $('#TableUsers tbody').on('click', 'tr', function () {
+            document.getElementById("buttonDelete").disabled = false;
+            if ($(this).hasClass('selected')){
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+                var a = table.row($(this).closest('tr')).data();
+                console.log(a);
+                var b = Object.keys(a).map(function (key){
+                    return [String(key), a[key]];
+                });
+                console.log(b[0][1].toString());
+                description = b[0][1].toString();
+                name = b[1][1].toString();
+                password = b[2][1].toString();
+                role = b[3][1].toString();
+                console.log(description,' ', name,' ', password,' ', role)
+//                console.log(typeof id);
+            }
+        });
+
+        $('#buttonDelete').click( function () {
+            event.preventDefault();
+            delete_user();
+            table.row('.selected').remove().draw(false);
+            document.getElementById("buttonDelete").disabled = true;
+        });
+         function delete_user() {
+             var addingFormData = {
+                 description : description,
+                 name : name,
+                 password : password,
+                 role : role
+             };
+             $.ajax({
+                 // type: "POST",
+                 type: "DELETE",
+                 // url: "/api/usersControll2",
+                 url: "/api/usersControll",
+                 data: JSON.stringify(addingFormData),
+                 dataType: 'json',
+                 contentType: "application/json; charset=utf-8",
+                 success: function (data) {
+                     // alert("Success of server's adding");
+                     $("#TableUsers").dataTable()._fnAjaxUpdate();
+                 }
+//                 error: function (e) {
+//                     alert("проблемы с сохранением");
+//                 }
+
+             })
+    }
+    });
+</script>
+
+</body>
+</html>
