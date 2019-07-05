@@ -1,0 +1,177 @@
+.body {
+    background-color: rgb(84, 110, 122);
+    background-image: -webkit-linear-gradient(top, #d9dee2, #546e7a);
+}
+
+#floatTip {
+    position: absolute;
+    width: 200px;
+    display: none;
+    border: 1px solid #000000;
+    padding: 4px;
+    font-family: sans-serif;
+    font-size: 9pt;
+    color: #333;
+    background: #f8f9fa;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #000000;
+}
+
+.navbar-dark .navbar-nav .nav-link.disabled {
+    color: #dae0e5;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+.nav-link {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.nav-item dropdown.show {
+    background-color: #ffffff;
+}
+.nav-link.active {
+    background-color: #ffffff;
+}
+
+.card {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: rgba(248, 249, 250, 0.92);
+    border-radius: .625rem;
+    border: 1px solid rgba(0,0,0,.125);
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    min-width: 770px;
+    /*text-align: center;*/
+  /*  min-width: 205px;*/
+}
+
+.card1 {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: rgb(199, 208, 212);
+    border-radius: .625rem;
+    border: 1px solid rgba(0,0,0,.125);
+    /*margin-right: 30px;*/
+    margin-bottom: -20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+
+.card2 {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: rgba(248, 249, 250, 0.92);
+    border-radius: .625rem;
+    border: 1px solid rgba(0,0,0,.125);
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    /*  min-width: 205px;*/
+}
+
+.body1 {
+    background: #f7f7fa;
+    font-size: 10pt;
+    padding: 10px;
+}
+.body2 {
+    /*background: #f3f3f3;*/
+    font-size: 10pt;
+    padding: 10px;
+}
+.body1 h2 {
+    text-align: center;
+    /*font-size: 10pt;*/
+}
+
+.body1 h3 {
+    text-align: center;
+    /*font-size: 10pt;*/
+}
+
+.body1 h4 {
+    /*text-align: center;*/
+    padding-left: 50px;
+}
+
+.body1 .imputIMSI {
+    margin-left: 65px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.row2 {
+    /*margin-top: 10px;*/
+    /*clear: both;*/
+    /*text-align: left;*/
+    line-height: 20px;
+    margin-left: 50px;
+    padding: 0px;
+    margin-top: 0px;
+    font-size: 10pt;
+}
+.textmenu {
+    margin-left: 50px;
+}
+
+.textarea {
+    display: inline-block;
+}
+
+.containerFooter {
+    min-width: 1600px;
+}
+select {
+/*    width: 50px;*/
+}
+
+.select1 {
+    min-width: 256px;
+}
+
+.col-md-4 {
+    margin-top: 10px;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto!important;
+    height: 100%;
+    margin-bottom: -25px;
+}
+.footer {
+    height: 25px;
+}
+
+#navbardrop{
+    margin-right: 40px;
+}
