@@ -17,7 +17,7 @@ spring:
           use_jdbc_metadata_defaults: false
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
 vkontakte:
-  clientId: 6854536
-  clientCode: tydL45SfvnbK23xrgs8a
+  clientId: blank
+  clientCode: blank
   callbackUri: http://188.227.18.141:8080/callback
   scope: wall,offline,email

@@ -95,22 +95,6 @@
     /*  min-width: 205px;*/
 }
 
-/*
-.card-body {
-    min-width: 205px;
-}
-*/
-
-/*.card text-white change-bg-dark {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .625rem;
-}*/
 .body1 {
     background: #f7f7fa;
     font-size: 10pt;
@@ -151,14 +135,6 @@
     margin-top: 0px;
     font-size: 10pt;
 }
-/*label {
-    float: left;
-    padding-right: 10px;
-}*/
-
-/*.form .formRadio {
-    margin-left: 65px;
-}*/
 .textmenu {
     margin-left: 50px;
 }
@@ -166,11 +142,7 @@
 .textarea {
     display: inline-block;
 }
-/*label {
-    display: inline-block;
-    width: 200px;
-    margin: 0px;
-}*/
+
 .containerFooter {
     min-width: 1600px;
 }
