@@ -1,7 +1,7 @@
 package com.serjeshs.usersvk.controller;
 
 import com.serjeshs.usersvk.domain.User;
-import com.serjeshs.usersvk.dto.UsersControllDto;
+import com.serjeshs.usersvk.dto.UserDto;
 import com.serjeshs.usersvk.repository.UserRepository;
 import com.serjeshs.usersvk.service.UsersService;
 import org.springframework.ui.Model;
@@ -21,35 +21,30 @@ public class UserManagementRestController {
         this.usersService = usersService;
     }
 
-//    @GetMapping("/api/usersControll")
     @GetMapping("/api/users")
-    public List<UsersControllDto> listUsers(Model model){
-
+    public List<UserDto> listUsers(Model model){
         List<User> usersControllDtoList = userRepository.findAll();
-        return usersControllDtoList.stream().map(UsersControllDto::toDto).collect(Collectors.toList());
+        return usersControllDtoList.stream().map(UserDto::toDto).collect(Collectors.toList());
     }
 
-//    @PostMapping("/api/usersControll")
     @PostMapping("/api/users")
     public User addUser(
-            @RequestBody UsersControllDto usersControllDto
+            @RequestBody UserDto userDto
     ){
-        return usersService.addUser(usersControllDto);
+        return usersService.addUser(userDto);
     }
 
-//    @DeleteMapping("/api/usersControll")
     @DeleteMapping("/api/users")
     public void deleteUser(
-            @RequestBody UsersControllDto usersControllDto
+            @RequestBody UserDto userDto
     ){
-         usersService.deleteUser(usersControllDto);
+         usersService.deleteUser(userDto);
     }
 
-//    @PatchMapping("/api/usersControll")
     @PatchMapping("/api/users")
     public  User changePassword(
-            @RequestBody UsersControllDto usersControllDto
+            @RequestBody UserDto userDto
     ){
-         return usersService.changePassword(usersControllDto);
+         return usersService.changePassword(userDto);
     }
 }

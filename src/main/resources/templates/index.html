@@ -73,7 +73,7 @@
                         <h3 style="font-size: 1.5rem; font-weight: 300; margin-bottom: .75rem;">Основное меню</h3>
                         <div class="row">
                             <div class="col-sm-6 col-lg-4 mb-3">
-                                <a class="link_td_none" th:href="@{/users-controll}">
+                                <a class="link_td_none" th:href="@{/user-management}">
                                     <div class="card2 text-white change-bg-dark" style="height: 100%;">
                                         <div class="card-body">
                                             <p class="card-text">Камеры<br/>видеонаблюдения&nbsp;</p>
@@ -106,8 +106,7 @@
                         <div class="row">
                             
                             <div class="col-sm-6 col-lg-4 mb-3">
-                                <a class="link_td_none" th:href="@{/users-controll}" sec:authorize="hasRole('ADMIN')">
-                                <!--<a class="link_td_none" th:href="@{/users-controll}">-->
+                                <a class="link_td_none" th:href="@{/user-management}" sec:authorize="hasRole('ADMIN')">
                                     <div class="card2 text-white change-bg-dark" style="height: 100%;">
                                         <div class="card-body">
                                             <p class="card-text">Управление пользователями</p>
@@ -170,7 +169,6 @@
 
         $.ajax({
             type: "PATCH",
-            // url: "/api/usersControll",
             url: "/api/users",
             data: JSON.stringify(addingFormData),
             dataType: 'json',

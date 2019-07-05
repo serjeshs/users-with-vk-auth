@@ -1,13 +1,13 @@
 package com.serjeshs.usersvk.service;
 
 import com.serjeshs.usersvk.domain.User;
-import com.serjeshs.usersvk.dto.UsersControllDto;
+import com.serjeshs.usersvk.dto.UserDto;
 
 public interface UsersService {
 
-    User addUser(UsersControllDto usersControllDto);
+    User addUser(UserDto userDto);
 
-    void deleteUser(UsersControllDto usersControllDto);
+    void deleteUser(UserDto userDto);
 
-    User changePassword(UsersControllDto usersControllDto);
+    User changePassword(UserDto userDto);
 }
