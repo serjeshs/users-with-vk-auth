@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.serjeshs</groupId>
     <artifactId>users-vkauth</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>users-vkauth</name>
     <description>project for Spring Boot</description>
 
@@ -89,7 +89,6 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
-            <!--<version>${spring-security.version}</version>-->
         </dependency>
 
     </dependencies>

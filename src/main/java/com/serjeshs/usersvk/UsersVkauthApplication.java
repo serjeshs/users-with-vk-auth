@@ -10,6 +10,7 @@ public class UsersVkauthApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(UsersVkauthApplication.class, args);
+
     }
 
 }

@@ -37,4 +37,12 @@ public class PagesController {
         model.addAttribute("username", principal.getName());
         return "user-management";
     }
+
+    @GetMapping("/cameras")
+    public String camerasPage(Model model, HttpServletRequest request) {
+        model.addAttribute("appversion", ver);
+        Principal principal = request.getUserPrincipal();
+        model.addAttribute("username", principal.getName());
+        return "cameras";
+    }
 }

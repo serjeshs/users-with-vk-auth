@@ -4,11 +4,6 @@ spring:
   profiles:
     active: dev
 #    active: prod
-  datasource:
-    url: jdbc:postgresql://188.227.18.141:5432/usersvk_db
-    username: blank
-    password: blank
-    driver-class-name: org.postgresql.Driver
   jpa:
     properties:
       hibernate:

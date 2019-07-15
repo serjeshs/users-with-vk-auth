@@ -3,3 +3,8 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://188.227.18.141:5432/usersvk_db
+    username: blank
+    password: blank
+    driver-class-name: org.postgresql.Driver
